@@ -1,0 +1,20 @@
+﻿@model FirstWebApplication.Models.Customer
+
+<h1>Registration Feedback</h1>
+
+@if (!string.IsNullOrEmpty(ViewBag.Message))
+{
+    <p class="text-success">@ViewBag.Message</p>
+}
+@if (ViewData.ModelState.ErrorCount > 0)
+{
+    <div class="text-danger">
+        <p>Registration failed. Please correct the following issues:</p>
+        <ul>
+            @foreach (var error in ViewData.ModelState.Values.SelectMany(ms => ms.Errors))
+            {
+                <li>@error.ErrorMessage</li>
+            }
+        </ul>
+    </div>
+}

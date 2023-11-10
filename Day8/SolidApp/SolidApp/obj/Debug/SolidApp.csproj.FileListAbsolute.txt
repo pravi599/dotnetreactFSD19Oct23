@@ -1,0 +1,7 @@
+C:\Users\valle\OneDrive\Desktop\stream training\Day8\SolidApp\SolidApp\bin\Debug\SolidApp.exe.config
+C:\Users\valle\OneDrive\Desktop\stream training\Day8\SolidApp\SolidApp\bin\Debug\SolidApp.exe
+C:\Users\valle\OneDrive\Desktop\stream training\Day8\SolidApp\SolidApp\bin\Debug\SolidApp.pdb
+C:\Users\valle\OneDrive\Desktop\stream training\Day8\SolidApp\SolidApp\obj\Debug\SolidApp.csproj.AssemblyReference.cache
+C:\Users\valle\OneDrive\Desktop\stream training\Day8\SolidApp\SolidApp\obj\Debug\SolidApp.csproj.CoreCompileInputs.cache
+C:\Users\valle\OneDrive\Desktop\stream training\Day8\SolidApp\SolidApp\obj\Debug\SolidApp.exe
+C:\Users\valle\OneDrive\Desktop\stream training\Day8\SolidApp\SolidApp\obj\Debug\SolidApp.pdb

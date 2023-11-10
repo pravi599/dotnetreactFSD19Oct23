@@ -1,0 +1,7 @@
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\EnumsAndSwitch\EnumsAndSwitch\obj\Debug\EnumsAndSwitch.csproj.AssemblyReference.cache
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\EnumsAndSwitch\EnumsAndSwitch\obj\Debug\EnumsAndSwitch.csproj.CoreCompileInputs.cache
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\EnumsAndSwitch\EnumsAndSwitch\bin\Debug\EnumsAndSwitch.exe.config
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\EnumsAndSwitch\EnumsAndSwitch\bin\Debug\EnumsAndSwitch.exe
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\EnumsAndSwitch\EnumsAndSwitch\bin\Debug\EnumsAndSwitch.pdb
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\EnumsAndSwitch\EnumsAndSwitch\obj\Debug\EnumsAndSwitch.exe
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\EnumsAndSwitch\EnumsAndSwitch\obj\Debug\EnumsAndSwitch.pdb

@@ -1,0 +1,11 @@
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\MyCodeLibrary\MyCodeLibrary\bin\Debug\net6.0\MyCodeLibrary.deps.json
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\MyCodeLibrary\MyCodeLibrary\bin\Debug\net6.0\MyCodeLibrary.dll
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\MyCodeLibrary\MyCodeLibrary\bin\Debug\net6.0\MyCodeLibrary.pdb
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\MyCodeLibrary\MyCodeLibrary\obj\Debug\net6.0\MyCodeLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\MyCodeLibrary\MyCodeLibrary\obj\Debug\net6.0\MyCodeLibrary.AssemblyInfoInputs.cache
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\MyCodeLibrary\MyCodeLibrary\obj\Debug\net6.0\MyCodeLibrary.AssemblyInfo.cs
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\MyCodeLibrary\MyCodeLibrary\obj\Debug\net6.0\MyCodeLibrary.csproj.CoreCompileInputs.cache
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\MyCodeLibrary\MyCodeLibrary\obj\Debug\net6.0\MyCodeLibrary.dll
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\MyCodeLibrary\MyCodeLibrary\obj\Debug\net6.0\refint\MyCodeLibrary.dll
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\MyCodeLibrary\MyCodeLibrary\obj\Debug\net6.0\MyCodeLibrary.pdb
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\MyCodeLibrary\MyCodeLibrary\obj\Debug\net6.0\ref\MyCodeLibrary.dll

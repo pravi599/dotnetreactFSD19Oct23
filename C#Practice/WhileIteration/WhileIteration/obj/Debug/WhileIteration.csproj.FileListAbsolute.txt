@@ -1,0 +1,7 @@
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\WhileIteration\WhileIteration\bin\Debug\WhileIteration.exe.config
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\WhileIteration\WhileIteration\bin\Debug\WhileIteration.exe
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\WhileIteration\WhileIteration\bin\Debug\WhileIteration.pdb
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\WhileIteration\WhileIteration\obj\Debug\WhileIteration.csproj.AssemblyReference.cache
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\WhileIteration\WhileIteration\obj\Debug\WhileIteration.csproj.CoreCompileInputs.cache
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\WhileIteration\WhileIteration\obj\Debug\WhileIteration.exe
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\WhileIteration\WhileIteration\obj\Debug\WhileIteration.pdb

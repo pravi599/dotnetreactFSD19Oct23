@@ -1,0 +1,7 @@
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\Decisions\Decisions\bin\Debug\Decisions.exe.config
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\Decisions\Decisions\bin\Debug\Decisions.exe
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\Decisions\Decisions\bin\Debug\Decisions.pdb
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\Decisions\Decisions\obj\Debug\Decisions.csproj.AssemblyReference.cache
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\Decisions\Decisions\obj\Debug\Decisions.csproj.CoreCompileInputs.cache
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\Decisions\Decisions\obj\Debug\Decisions.exe
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\Decisions\Decisions\obj\Debug\Decisions.pdb

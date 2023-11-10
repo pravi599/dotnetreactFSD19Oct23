@@ -1,0 +1,7 @@
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\UnderstandingLINQ\UnderstandingLINQ\bin\Debug\UnderstandingLINQ.exe.config
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\UnderstandingLINQ\UnderstandingLINQ\bin\Debug\UnderstandingLINQ.exe
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\UnderstandingLINQ\UnderstandingLINQ\bin\Debug\UnderstandingLINQ.pdb
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\UnderstandingLINQ\UnderstandingLINQ\obj\Debug\UnderstandingLINQ.csproj.AssemblyReference.cache
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\UnderstandingLINQ\UnderstandingLINQ\obj\Debug\UnderstandingLINQ.csproj.CoreCompileInputs.cache
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\UnderstandingLINQ\UnderstandingLINQ\obj\Debug\UnderstandingLINQ.exe
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\UnderstandingLINQ\UnderstandingLINQ\obj\Debug\UnderstandingLINQ.pdb

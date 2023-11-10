@@ -1,0 +1,7 @@
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\UnderstandingArrays\UnderstandingArrays\bin\Debug\UnderstandingArrays.exe.config
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\UnderstandingArrays\UnderstandingArrays\bin\Debug\UnderstandingArrays.exe
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\UnderstandingArrays\UnderstandingArrays\bin\Debug\UnderstandingArrays.pdb
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\UnderstandingArrays\UnderstandingArrays\obj\Debug\UnderstandingArrays.csproj.AssemblyReference.cache
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\UnderstandingArrays\UnderstandingArrays\obj\Debug\UnderstandingArrays.csproj.CoreCompileInputs.cache
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\UnderstandingArrays\UnderstandingArrays\obj\Debug\UnderstandingArrays.exe
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\UnderstandingArrays\UnderstandingArrays\obj\Debug\UnderstandingArrays.pdb

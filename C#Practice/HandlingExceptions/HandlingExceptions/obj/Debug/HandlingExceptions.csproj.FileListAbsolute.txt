@@ -1,0 +1,7 @@
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\HandlingExceptions\HandlingExceptions\bin\Debug\HandlingExceptions.exe.config
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\HandlingExceptions\HandlingExceptions\bin\Debug\HandlingExceptions.exe
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\HandlingExceptions\HandlingExceptions\bin\Debug\HandlingExceptions.pdb
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\HandlingExceptions\HandlingExceptions\obj\Debug\HandlingExceptions.csproj.AssemblyReference.cache
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\HandlingExceptions\HandlingExceptions\obj\Debug\HandlingExceptions.csproj.CoreCompileInputs.cache
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\HandlingExceptions\HandlingExceptions\obj\Debug\HandlingExceptions.exe
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\HandlingExceptions\HandlingExceptions\obj\Debug\HandlingExceptions.pdb

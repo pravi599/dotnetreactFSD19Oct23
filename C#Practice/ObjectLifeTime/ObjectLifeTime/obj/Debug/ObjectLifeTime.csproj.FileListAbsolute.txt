@@ -1,0 +1,7 @@
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\ObjectLifeTime\ObjectLifeTime\bin\Debug\ObjectLifeTime.exe.config
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\ObjectLifeTime\ObjectLifeTime\bin\Debug\ObjectLifeTime.exe
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\ObjectLifeTime\ObjectLifeTime\bin\Debug\ObjectLifeTime.pdb
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\ObjectLifeTime\ObjectLifeTime\obj\Debug\ObjectLifeTime.csproj.AssemblyReference.cache
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\ObjectLifeTime\ObjectLifeTime\obj\Debug\ObjectLifeTime.csproj.CoreCompileInputs.cache
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\ObjectLifeTime\ObjectLifeTime\obj\Debug\ObjectLifeTime.exe
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\ObjectLifeTime\ObjectLifeTime\obj\Debug\ObjectLifeTime.pdb

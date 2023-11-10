@@ -1,0 +1,10 @@
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\MyClient\MyClient\bin\Debug\MyClient.exe.config
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\MyClient\MyClient\bin\Debug\MyClient.exe
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\MyClient\MyClient\bin\Debug\MyClient.pdb
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\MyClient\MyClient\bin\Debug\MyCodeLibrary.dll
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\MyClient\MyClient\bin\Debug\MyCodeLibrary.pdb
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\MyClient\MyClient\obj\Debug\MyClient.csproj.AssemblyReference.cache
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\MyClient\MyClient\obj\Debug\MyClient.csproj.CoreCompileInputs.cache
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\MyClient\MyClient\obj\Debug\MyClient.csproj.CopyComplete
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\MyClient\MyClient\obj\Debug\MyClient.exe
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\MyClient\MyClient\obj\Debug\MyClient.pdb

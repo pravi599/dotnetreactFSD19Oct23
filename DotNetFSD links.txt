@@ -1,0 +1,84 @@
+CodeShare
+-----------------
+https://codeshare.io/Gayathri
+
+GitHub
+-----------
+
+https://github.com/gayat19/dotnetreactFSD19Oct23.git
+
+ClassRoom
+-----------------
+
+https://classroom.google.com/c/NTMwMjE0MDk0ODA4/a/NjMyMjU3NTg3NTY4/details
+
+
+Reference Notes
+-------------------------
+
+https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/built-in-types
+
+
+Video
+---------
+
+https://hexawareonline-my.sharepoint.com/:v:/g/personal/2000086510_hexaware_com/EY5SsA0ouEVDvjGB5SGisncBuCvFvINXESFHuaPc6m-mBA
+
+https://hexawareonline-my.sharepoint.com/:v:/g/personal/2000086510_hexaware_com/ESehm8cfNzhIrtSnj34cGdQBUQlk2jUPQAr5FniXQgeURQ
+
+https://hexawareonline-my.sharepoint.com/:v:/g/personal/2000076528_hexaware_com/ES56kZKaDIZNl6DOtDM3KroBa-mg809QZyk-5ztcpIc2Lg
+
+BatchNames
+-------------------
+
+M J S Srivalli Mamillapalli
+Purvika Ghanta
+KALLA MANI SHANKER
+Shaik Ayesha Mallika Mallika
+Vishesh Jaiswal
+Vinay Penumaka
+Rajat Darvhekar
+ANAND SINGH
+Mary Gandi
+BODDU SAI NIKHIL
+Naga Eswara Reddy Sathi
+PRAVEENA VALLELA
+Mounika Naga Sravanthi Kotipalli
+Sreya Jamma
+Divya Palakurthy
+Sakalabhaktula Devipriya
+Kavitha M
+Chitti Dilleswari
+Kolusu Naga Venkata Sai Surendra
+Challa Naga Jyothi
+KUMMITHI  KUSUMA
+Md Sahil Babu
+Mutum Robert
+Arisetty Likhitha
+Niranjan  R
+Himacharan Dandupati
+Jayasurya M
+Elluru Srimayee
+
+
+
+Gayatri Mahadevan---9176626294
+
+DataBase Diagram
+
+https://dbdiagram.io/d
+
+
+
+C#
+--------------------------
+
+**ctrl+. 
+
+Solid Princples
+
+https://www.c-sharpcorner.com/UploadFile/damubetha/solid-principles-in-C-Sharp/
+
+
+
+

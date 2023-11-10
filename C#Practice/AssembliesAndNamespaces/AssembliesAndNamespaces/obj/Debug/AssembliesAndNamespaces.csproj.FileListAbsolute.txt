@@ -1,0 +1,7 @@
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\AssembliesAndNamespaces\AssembliesAndNamespaces\bin\Debug\AssembliesAndNamespaces.exe.config
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\AssembliesAndNamespaces\AssembliesAndNamespaces\bin\Debug\AssembliesAndNamespaces.exe
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\AssembliesAndNamespaces\AssembliesAndNamespaces\bin\Debug\AssembliesAndNamespaces.pdb
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\AssembliesAndNamespaces\AssembliesAndNamespaces\obj\Debug\AssembliesAndNamespaces.csproj.AssemblyReference.cache
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\AssembliesAndNamespaces\AssembliesAndNamespaces\obj\Debug\AssembliesAndNamespaces.csproj.CoreCompileInputs.cache
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\AssembliesAndNamespaces\AssembliesAndNamespaces\obj\Debug\AssembliesAndNamespaces.exe
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\AssembliesAndNamespaces\AssembliesAndNamespaces\obj\Debug\AssembliesAndNamespaces.pdb

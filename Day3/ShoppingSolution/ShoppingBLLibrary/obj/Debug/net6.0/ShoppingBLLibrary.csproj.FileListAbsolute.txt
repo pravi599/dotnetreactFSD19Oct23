@@ -1,0 +1,17 @@
+C:\Users\valle\OneDrive\Desktop\stream training\Day3\ShoppingSolution\ShoppingBLLibrary\bin\Debug\net6.0\ShoppingBLLibrary.deps.json
+C:\Users\valle\OneDrive\Desktop\stream training\Day3\ShoppingSolution\ShoppingBLLibrary\bin\Debug\net6.0\ShoppingBLLibrary.dll
+C:\Users\valle\OneDrive\Desktop\stream training\Day3\ShoppingSolution\ShoppingBLLibrary\bin\Debug\net6.0\ShoppingBLLibrary.pdb
+C:\Users\valle\OneDrive\Desktop\stream training\Day3\ShoppingSolution\ShoppingBLLibrary\bin\Debug\net6.0\ShoppingDALLibrary.dll
+C:\Users\valle\OneDrive\Desktop\stream training\Day3\ShoppingSolution\ShoppingBLLibrary\bin\Debug\net6.0\ShoppingModelLibrary.dll
+C:\Users\valle\OneDrive\Desktop\stream training\Day3\ShoppingSolution\ShoppingBLLibrary\bin\Debug\net6.0\ShoppingDALLibrary.pdb
+C:\Users\valle\OneDrive\Desktop\stream training\Day3\ShoppingSolution\ShoppingBLLibrary\bin\Debug\net6.0\ShoppingModelLibrary.pdb
+C:\Users\valle\OneDrive\Desktop\stream training\Day3\ShoppingSolution\ShoppingBLLibrary\obj\Debug\net6.0\ShoppingBLLibrary.csproj.AssemblyReference.cache
+C:\Users\valle\OneDrive\Desktop\stream training\Day3\ShoppingSolution\ShoppingBLLibrary\obj\Debug\net6.0\ShoppingBLLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\valle\OneDrive\Desktop\stream training\Day3\ShoppingSolution\ShoppingBLLibrary\obj\Debug\net6.0\ShoppingBLLibrary.AssemblyInfoInputs.cache
+C:\Users\valle\OneDrive\Desktop\stream training\Day3\ShoppingSolution\ShoppingBLLibrary\obj\Debug\net6.0\ShoppingBLLibrary.AssemblyInfo.cs
+C:\Users\valle\OneDrive\Desktop\stream training\Day3\ShoppingSolution\ShoppingBLLibrary\obj\Debug\net6.0\ShoppingBLLibrary.csproj.CoreCompileInputs.cache
+C:\Users\valle\OneDrive\Desktop\stream training\Day3\ShoppingSolution\ShoppingBLLibrary\obj\Debug\net6.0\ShoppingBLLibrary.csproj.CopyComplete
+C:\Users\valle\OneDrive\Desktop\stream training\Day3\ShoppingSolution\ShoppingBLLibrary\obj\Debug\net6.0\ShoppingBLLibrary.dll
+C:\Users\valle\OneDrive\Desktop\stream training\Day3\ShoppingSolution\ShoppingBLLibrary\obj\Debug\net6.0\refint\ShoppingBLLibrary.dll
+C:\Users\valle\OneDrive\Desktop\stream training\Day3\ShoppingSolution\ShoppingBLLibrary\obj\Debug\net6.0\ShoppingBLLibrary.pdb
+C:\Users\valle\OneDrive\Desktop\stream training\Day3\ShoppingSolution\ShoppingBLLibrary\obj\Debug\net6.0\ref\ShoppingBLLibrary.dll

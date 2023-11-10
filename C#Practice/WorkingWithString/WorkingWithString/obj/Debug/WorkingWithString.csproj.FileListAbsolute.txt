@@ -1,0 +1,7 @@
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\WorkingWithString\WorkingWithString\bin\Debug\WorkingWithString.exe.config
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\WorkingWithString\WorkingWithString\bin\Debug\WorkingWithString.exe
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\WorkingWithString\WorkingWithString\bin\Debug\WorkingWithString.pdb
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\WorkingWithString\WorkingWithString\obj\Debug\WorkingWithString.csproj.AssemblyReference.cache
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\WorkingWithString\WorkingWithString\obj\Debug\WorkingWithString.csproj.CoreCompileInputs.cache
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\WorkingWithString\WorkingWithString\obj\Debug\WorkingWithString.exe
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\WorkingWithString\WorkingWithString\obj\Debug\WorkingWithString.pdb

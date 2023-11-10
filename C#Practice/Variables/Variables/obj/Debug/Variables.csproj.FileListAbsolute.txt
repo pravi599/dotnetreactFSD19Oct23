@@ -1,0 +1,7 @@
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\Variables\Variables\bin\Debug\Variables.exe.config
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\Variables\Variables\bin\Debug\Variables.exe
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\Variables\Variables\bin\Debug\Variables.pdb
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\Variables\Variables\obj\Debug\Variables.csproj.AssemblyReference.cache
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\Variables\Variables\obj\Debug\Variables.csproj.CoreCompileInputs.cache
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\Variables\Variables\obj\Debug\Variables.exe
+C:\Users\valle\OneDrive\Desktop\stream training\C#Practice\Variables\Variables\obj\Debug\Variables.pdb
