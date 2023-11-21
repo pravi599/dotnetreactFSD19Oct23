@@ -36,7 +36,6 @@ namespace ShoppingApp.Services
             return tokenHandler.WriteToken(token);
 
         }
-
     }
 }
 

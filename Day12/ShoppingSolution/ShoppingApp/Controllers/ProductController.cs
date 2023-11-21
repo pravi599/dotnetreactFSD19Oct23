@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using ShoppingApp.Exceptions;
 using ShoppingApp.Interfaces;
 using ShoppingApp.Models;
-
+using ShoppingApp.Services;
 namespace ShoppingApp.Controllers
 {
     [Route("api/[controller]")]
@@ -12,12 +12,13 @@ namespace ShoppingApp.Controllers
     public class ProductController : ControllerBase
     {
         private readonly IProductService _productService;
+        private readonly ILogger<ProductController> _logger;
 
-        public ProductController(IProductService productService)
+        public ProductController(IProductService productService, ILogger<ProductController> logger)
         {
             _productService = productService;
+            _logger = logger;
         }
-        [Authorize]
         [HttpGet]
         public ActionResult Get()
         {
@@ -25,6 +26,7 @@ namespace ShoppingApp.Controllers
             try
             {
                 var result = _productService.GetProducts();
+                _logger.LogInformation("Product Listed");
                 return Ok(result);
             }
             catch (NoProductsAvailableException e)

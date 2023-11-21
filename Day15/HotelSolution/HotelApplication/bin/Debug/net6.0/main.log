@@ -1,0 +1,778 @@
+2023-11-21 22:26:26,523 [1] INFO Microsoft.EntityFrameworkCore.Infrastructure.?[?] - Entity Framework Core 6.0.24 initialized 'BookingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.24' with options: None
+2023-11-21 22:27:50,824 [1] INFO Microsoft.EntityFrameworkCore.Infrastructure.?[?] - Entity Framework Core 6.0.24 initialized 'BookingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.24' with options: None
+2023-11-21 22:27:57,827 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (4,983ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+CREATE DATABASE [dbHotel21Nov2023];
+2023-11-21 22:27:59,370 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (1,530ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [dbHotel21Nov2023] SET READ_COMMITTED_SNAPSHOT ON;
+END;
+2023-11-21 22:27:59,584 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (37ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+2023-11-21 22:28:01,359 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (686ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);
+2023-11-21 22:28:01,372 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+2023-11-21 22:28:01,511 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (90ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-11-21 22:28:01,717 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (183ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-11-21 22:28:01,791 [1] INFO Microsoft.EntityFrameworkCore.Migrations.?[?] - Applying migration '20231121165627_Initial'.
+2023-11-21 22:28:02,279 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (291ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Users] (
+    [UserEmail] nvarchar(450) NOT NULL,
+    [Name] nvarchar(max) NOT NULL,
+    [Password] varbinary(max) NOT NULL,
+    [PhoneNo] nvarchar(max) NOT NULL,
+    [Address] nvarchar(max) NOT NULL,
+    [Role] nvarchar(max) NOT NULL,
+    [Key] varbinary(max) NOT NULL,
+    CONSTRAINT [PK_Users] PRIMARY KEY ([UserEmail])
+);
+2023-11-21 22:28:04,432 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (629ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Hotels] (
+    [HotelId] int NOT NULL IDENTITY,
+    [UserEmail] nvarchar(450) NOT NULL,
+    [HotelName] nvarchar(max) NOT NULL,
+    [Address] nvarchar(max) NOT NULL,
+    [PhoneNo] nvarchar(max) NOT NULL,
+    [Description] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_Hotels] PRIMARY KEY ([HotelId]),
+    CONSTRAINT [FK_Hotels_Users_UserEmail] FOREIGN KEY ([UserEmail]) REFERENCES [Users] ([UserEmail]) ON DELETE CASCADE
+);
+2023-11-21 22:28:04,473 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (34ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Bookings] (
+    [BookingId] int NOT NULL IDENTITY,
+    [UserEmail] nvarchar(450) NOT NULL,
+    [BookingDate] nvarchar(max) NOT NULL,
+    [RoomId] int NOT NULL,
+    [TotalRooms] int NOT NULL,
+    [Price] real NOT NULL,
+    CONSTRAINT [PK_Bookings] PRIMARY KEY ([BookingId]),
+    CONSTRAINT [FK_Bookings_Users_UserEmail] FOREIGN KEY ([UserEmail]) REFERENCES [Users] ([UserEmail]) ON DELETE CASCADE
+);
+2023-11-21 22:28:10,549 [1] ERROR Microsoft.EntityFrameworkCore.Database.Command.?[?] - Failed executing DbCommand (963ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Rooms] (
+    [RoomId] int NOT NULL,
+    [HotelId] int NOT NULL,
+    [Price] real NOT NULL,
+    [Capacity] int NOT NULL,
+    [Description] nvarchar(max) NOT NULL,
+    [UserEmail] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_Rooms] PRIMARY KEY ([RoomId]),
+    CONSTRAINT [FK_Rooms_Bookings_RoomId] FOREIGN KEY ([RoomId]) REFERENCES [Bookings] ([BookingId]) ON DELETE CASCADE,
+    CONSTRAINT [FK_Rooms_Hotels_HotelId] FOREIGN KEY ([HotelId]) REFERENCES [Hotels] ([HotelId]) ON DELETE CASCADE,
+    CONSTRAINT [FK_Rooms_Users_UserEmail] FOREIGN KEY ([UserEmail]) REFERENCES [Users] ([UserEmail]) ON DELETE CASCADE
+);
+2023-11-21 22:53:55,931 [1] INFO Microsoft.EntityFrameworkCore.Infrastructure.?[?] - Entity Framework Core 6.0.24 initialized 'BookingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.24' with options: None
+2023-11-21 22:56:00,131 [1] INFO Microsoft.EntityFrameworkCore.Infrastructure.?[?] - Entity Framework Core 6.0.24 initialized 'BookingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.24' with options: None
+2023-11-21 22:56:02,991 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (43ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+2023-11-21 22:56:03,086 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (62ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-11-21 22:56:03,099 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+2023-11-21 22:56:03,103 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-11-21 22:56:03,161 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (13ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-11-21 22:56:03,231 [1] INFO Microsoft.EntityFrameworkCore.Migrations.?[?] - Applying migration '20231121165627_Initial'.
+2023-11-21 22:56:04,057 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (651ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Users] (
+    [UserEmail] nvarchar(450) NOT NULL,
+    [Name] nvarchar(max) NOT NULL,
+    [Password] varbinary(max) NOT NULL,
+    [PhoneNo] nvarchar(max) NOT NULL,
+    [Address] nvarchar(max) NOT NULL,
+    [Role] nvarchar(max) NOT NULL,
+    [Key] varbinary(max) NOT NULL,
+    CONSTRAINT [PK_Users] PRIMARY KEY ([UserEmail])
+);
+2023-11-21 22:56:04,092 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (32ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Hotels] (
+    [HotelId] int NOT NULL IDENTITY,
+    [UserEmail] nvarchar(450) NOT NULL,
+    [HotelName] nvarchar(max) NOT NULL,
+    [Address] nvarchar(max) NOT NULL,
+    [PhoneNo] nvarchar(max) NOT NULL,
+    [Description] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_Hotels] PRIMARY KEY ([HotelId]),
+    CONSTRAINT [FK_Hotels_Users_UserEmail] FOREIGN KEY ([UserEmail]) REFERENCES [Users] ([UserEmail]) ON DELETE CASCADE
+);
+2023-11-21 22:56:04,101 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Bookings] (
+    [BookingId] int NOT NULL IDENTITY,
+    [UserEmail] nvarchar(450) NOT NULL,
+    [BookingDate] nvarchar(max) NOT NULL,
+    [RoomId] int NOT NULL,
+    [TotalRooms] int NOT NULL,
+    [Price] real NOT NULL,
+    CONSTRAINT [PK_Bookings] PRIMARY KEY ([BookingId]),
+    CONSTRAINT [FK_Bookings_Users_UserEmail] FOREIGN KEY ([UserEmail]) REFERENCES [Users] ([UserEmail]) ON DELETE CASCADE
+);
+2023-11-21 22:56:05,910 [1] ERROR Microsoft.EntityFrameworkCore.Database.Command.?[?] - Failed executing DbCommand (71ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Rooms] (
+    [RoomId] int NOT NULL,
+    [HotelId] int NOT NULL,
+    [Price] real NOT NULL,
+    [Capacity] int NOT NULL,
+    [Description] nvarchar(max) NOT NULL,
+    [UserEmail] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_Rooms] PRIMARY KEY ([RoomId]),
+    CONSTRAINT [FK_Rooms_Bookings_RoomId] FOREIGN KEY ([RoomId]) REFERENCES [Bookings] ([BookingId]) ON DELETE CASCADE,
+    CONSTRAINT [FK_Rooms_Hotels_HotelId] FOREIGN KEY ([HotelId]) REFERENCES [Hotels] ([HotelId]) ON DELETE CASCADE,
+    CONSTRAINT [FK_Rooms_Users_UserEmail] FOREIGN KEY ([UserEmail]) REFERENCES [Users] ([UserEmail]) ON DELETE CASCADE
+);
+2023-11-21 22:57:15,926 [1] INFO Microsoft.EntityFrameworkCore.Infrastructure.?[?] - Entity Framework Core 6.0.24 initialized 'BookingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.24' with options: None
+2023-11-21 22:58:07,400 [1] INFO Microsoft.EntityFrameworkCore.Infrastructure.?[?] - Entity Framework Core 6.0.24 initialized 'BookingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.24' with options: None
+2023-11-21 22:58:09,742 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (49ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+2023-11-21 22:58:09,889 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (102ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-11-21 22:58:09,913 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+2023-11-21 22:58:09,917 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-11-21 22:58:09,990 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-11-21 22:58:10,040 [1] INFO Microsoft.EntityFrameworkCore.Migrations.?[?] - Applying migration '20231121172716_Initial'.
+2023-11-21 22:58:10,470 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (195ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Users] (
+    [UserEmail] nvarchar(450) NOT NULL,
+    [Name] nvarchar(max) NOT NULL,
+    [Password] varbinary(max) NOT NULL,
+    [PhoneNo] nvarchar(max) NOT NULL,
+    [Address] nvarchar(max) NOT NULL,
+    [Role] nvarchar(max) NOT NULL,
+    [Key] varbinary(max) NOT NULL,
+    CONSTRAINT [PK_Users] PRIMARY KEY ([UserEmail])
+);
+2023-11-21 22:58:10,548 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (74ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Hotels] (
+    [HotelId] int NOT NULL IDENTITY,
+    [UserEmail] nvarchar(450) NOT NULL,
+    [HotelName] nvarchar(max) NOT NULL,
+    [Address] nvarchar(max) NOT NULL,
+    [PhoneNo] nvarchar(max) NOT NULL,
+    [Description] nvarchar(max) NULL,
+    CONSTRAINT [PK_Hotels] PRIMARY KEY ([HotelId]),
+    CONSTRAINT [FK_Hotels_Users_UserEmail] FOREIGN KEY ([UserEmail]) REFERENCES [Users] ([UserEmail]) ON DELETE CASCADE
+);
+2023-11-21 22:58:10,560 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Bookings] (
+    [BookingId] int NOT NULL IDENTITY,
+    [UserEmail] nvarchar(450) NOT NULL,
+    [RoomId] int NOT NULL,
+    [BookingDate] nvarchar(max) NOT NULL,
+    [TotalRooms] int NOT NULL,
+    [Price] real NOT NULL,
+    CONSTRAINT [PK_Bookings] PRIMARY KEY ([BookingId]),
+    CONSTRAINT [FK_Bookings_Users_UserEmail] FOREIGN KEY ([UserEmail]) REFERENCES [Users] ([UserEmail]) ON DELETE CASCADE
+);
+2023-11-21 22:58:13,521 [1] ERROR Microsoft.EntityFrameworkCore.Database.Command.?[?] - Failed executing DbCommand (41ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Rooms] (
+    [RoomId] int NOT NULL,
+    [HotelId] int NOT NULL,
+    [Price] real NOT NULL,
+    [Description] nvarchar(max) NULL,
+    [UserEmail] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_Rooms] PRIMARY KEY ([RoomId]),
+    CONSTRAINT [FK_Rooms_Bookings_RoomId] FOREIGN KEY ([RoomId]) REFERENCES [Bookings] ([BookingId]) ON DELETE CASCADE,
+    CONSTRAINT [FK_Rooms_Hotels_HotelId] FOREIGN KEY ([HotelId]) REFERENCES [Hotels] ([HotelId]) ON DELETE CASCADE,
+    CONSTRAINT [FK_Rooms_Users_UserEmail] FOREIGN KEY ([UserEmail]) REFERENCES [Users] ([UserEmail]) ON DELETE CASCADE
+);
+2023-11-21 23:02:47,092 [1] INFO Microsoft.EntityFrameworkCore.Infrastructure.?[?] - Entity Framework Core 6.0.24 initialized 'BookingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.24' with options: None
+2023-11-21 23:03:18,117 [1] INFO Microsoft.EntityFrameworkCore.Infrastructure.?[?] - Entity Framework Core 6.0.24 initialized 'BookingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.24' with options: None
+2023-11-21 23:03:20,152 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (44ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+2023-11-21 23:03:20,287 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (86ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-11-21 23:03:20,298 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+2023-11-21 23:03:20,301 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-11-21 23:03:20,353 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-11-21 23:03:20,408 [1] INFO Microsoft.EntityFrameworkCore.Migrations.?[?] - Applying migration '20231121173247_Initial'.
+2023-11-21 23:03:20,871 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (224ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Users] (
+    [UserEmail] nvarchar(450) NOT NULL,
+    [Name] nvarchar(max) NOT NULL,
+    [Password] varbinary(max) NOT NULL,
+    [PhoneNo] nvarchar(max) NOT NULL,
+    [Address] nvarchar(max) NOT NULL,
+    [Role] nvarchar(max) NOT NULL,
+    [Key] varbinary(max) NOT NULL,
+    CONSTRAINT [PK_Users] PRIMARY KEY ([UserEmail])
+);
+2023-11-21 23:03:20,902 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (28ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Hotels] (
+    [HotelId] int NOT NULL IDENTITY,
+    [UserEmail] nvarchar(450) NOT NULL,
+    [HotelName] nvarchar(max) NOT NULL,
+    [Address] nvarchar(max) NOT NULL,
+    [PhoneNo] nvarchar(max) NOT NULL,
+    [Description] nvarchar(max) NULL,
+    CONSTRAINT [PK_Hotels] PRIMARY KEY ([HotelId]),
+    CONSTRAINT [FK_Hotels_Users_UserEmail] FOREIGN KEY ([UserEmail]) REFERENCES [Users] ([UserEmail]) ON DELETE CASCADE
+);
+2023-11-21 23:03:22,159 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (11ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Bookings] (
+    [BookingId] int NOT NULL IDENTITY,
+    [UserEmail] nvarchar(450) NOT NULL,
+    [RoomId] int NOT NULL,
+    [BookingDate] nvarchar(max) NOT NULL,
+    [TotalRooms] int NOT NULL,
+    [Price] real NOT NULL,
+    CONSTRAINT [PK_Bookings] PRIMARY KEY ([BookingId]),
+    CONSTRAINT [FK_Bookings_Users_UserEmail] FOREIGN KEY ([UserEmail]) REFERENCES [Users] ([UserEmail]) ON DELETE CASCADE
+);
+2023-11-21 23:03:22,200 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (33ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Rooms] (
+    [RoomId] int NOT NULL,
+    [HotelId] int NOT NULL,
+    [Price] real NOT NULL,
+    [Description] nvarchar(max) NULL,
+    [UserEmail] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_Rooms] PRIMARY KEY ([RoomId]),
+    CONSTRAINT [FK_Rooms_Bookings_RoomId] FOREIGN KEY ([RoomId]) REFERENCES [Bookings] ([BookingId]),
+    CONSTRAINT [FK_Rooms_Hotels_HotelId] FOREIGN KEY ([HotelId]) REFERENCES [Hotels] ([HotelId]) ON DELETE CASCADE,
+    CONSTRAINT [FK_Rooms_Users_UserEmail] FOREIGN KEY ([UserEmail]) REFERENCES [Users] ([UserEmail])
+);
+2023-11-21 23:03:26,871 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (49ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [RoomAmenities] (
+    [RoomAmenityId] int NOT NULL IDENTITY,
+    [RoomId] int NOT NULL,
+    [Amenities] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_RoomAmenities] PRIMARY KEY ([RoomAmenityId]),
+    CONSTRAINT [FK_RoomAmenities_Rooms_RoomId] FOREIGN KEY ([RoomId]) REFERENCES [Rooms] ([RoomId]) ON DELETE CASCADE
+);
+2023-11-21 23:03:26,905 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (31ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_Bookings_RoomId] ON [Bookings] ([RoomId]);
+2023-11-21 23:03:26,913 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_Bookings_UserEmail] ON [Bookings] ([UserEmail]);
+2023-11-21 23:03:26,931 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (14ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_Hotels_UserEmail] ON [Hotels] ([UserEmail]);
+2023-11-21 23:03:26,957 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (18ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_RoomAmenities_RoomId] ON [RoomAmenities] ([RoomId]);
+2023-11-21 23:03:31,145 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_Rooms_HotelId] ON [Rooms] ([HotelId]);
+2023-11-21 23:03:31,149 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_Rooms_UserEmail] ON [Rooms] ([UserEmail]);
+2023-11-21 23:03:31,203 [1] ERROR Microsoft.EntityFrameworkCore.Database.Command.?[?] - Failed executing DbCommand (27ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE [Bookings] ADD CONSTRAINT [FK_Bookings_Rooms_RoomId] FOREIGN KEY ([RoomId]) REFERENCES [Rooms] ([RoomId]) ON DELETE CASCADE;
+2023-11-21 23:08:51,952 [1] INFO Microsoft.EntityFrameworkCore.Infrastructure.?[?] - Entity Framework Core 6.0.24 initialized 'BookingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.24' with options: None
+2023-11-21 23:09:35,470 [1] INFO Microsoft.EntityFrameworkCore.Infrastructure.?[?] - Entity Framework Core 6.0.24 initialized 'BookingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.24' with options: None
+2023-11-21 23:09:37,509 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (40ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+2023-11-21 23:09:37,635 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (70ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-11-21 23:09:37,647 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+2023-11-21 23:09:37,651 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-11-21 23:09:37,700 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-11-21 23:09:37,742 [1] INFO Microsoft.EntityFrameworkCore.Migrations.?[?] - Applying migration '20231121173852_Initial'.
+2023-11-21 23:09:38,156 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (211ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Users] (
+    [UserEmail] nvarchar(450) NOT NULL,
+    [Name] nvarchar(max) NOT NULL,
+    [Password] varbinary(max) NOT NULL,
+    [PhoneNo] nvarchar(max) NOT NULL,
+    [Address] nvarchar(max) NOT NULL,
+    [Role] nvarchar(max) NOT NULL,
+    [Key] varbinary(max) NOT NULL,
+    CONSTRAINT [PK_Users] PRIMARY KEY ([UserEmail])
+);
+2023-11-21 23:09:38,259 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (96ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Hotels] (
+    [HotelId] int NOT NULL IDENTITY,
+    [UserEmail] nvarchar(450) NOT NULL,
+    [HotelName] nvarchar(max) NOT NULL,
+    [Address] nvarchar(max) NOT NULL,
+    [PhoneNo] nvarchar(max) NOT NULL,
+    [Description] nvarchar(max) NULL,
+    CONSTRAINT [PK_Hotels] PRIMARY KEY ([HotelId]),
+    CONSTRAINT [FK_Hotels_Users_UserEmail] FOREIGN KEY ([UserEmail]) REFERENCES [Users] ([UserEmail]) ON DELETE CASCADE
+);
+2023-11-21 23:09:38,274 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Bookings] (
+    [BookingId] int NOT NULL IDENTITY,
+    [UserEmail] nvarchar(450) NOT NULL,
+    [RoomId] int NOT NULL,
+    [BookingDate] nvarchar(max) NOT NULL,
+    [TotalRooms] int NOT NULL,
+    [Price] real NOT NULL,
+    CONSTRAINT [PK_Bookings] PRIMARY KEY ([BookingId]),
+    CONSTRAINT [FK_Bookings_Users_UserEmail] FOREIGN KEY ([UserEmail]) REFERENCES [Users] ([UserEmail]) ON DELETE CASCADE
+);
+2023-11-21 23:09:40,219 [1] ERROR Microsoft.EntityFrameworkCore.Database.Command.?[?] - Failed executing DbCommand (59ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Rooms] (
+    [RoomId] int NOT NULL,
+    [HotelId] int NOT NULL,
+    [Price] real NOT NULL,
+    [Description] nvarchar(max) NULL,
+    [UserEmail] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_Rooms] PRIMARY KEY ([RoomId]),
+    CONSTRAINT [FK_Rooms_Bookings_RoomId] FOREIGN KEY ([RoomId]) REFERENCES [Bookings] ([BookingId]) ON DELETE CASCADE,
+    CONSTRAINT [FK_Rooms_Hotels_HotelId] FOREIGN KEY ([HotelId]) REFERENCES [Hotels] ([HotelId]) ON DELETE CASCADE,
+    CONSTRAINT [FK_Rooms_Users_UserEmail] FOREIGN KEY ([UserEmail]) REFERENCES [Users] ([UserEmail])
+);
+2023-11-21 23:11:35,656 [1] INFO Microsoft.EntityFrameworkCore.Infrastructure.?[?] - Entity Framework Core 6.0.24 initialized 'BookingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.24' with options: None
+2023-11-21 23:13:10,859 [1] INFO Microsoft.EntityFrameworkCore.Infrastructure.?[?] - Entity Framework Core 6.0.24 initialized 'BookingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.24' with options: None
+2023-11-21 23:14:22,046 [1] INFO Microsoft.EntityFrameworkCore.Infrastructure.?[?] - Entity Framework Core 6.0.24 initialized 'BookingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.24' with options: None
+2023-11-21 23:14:24,636 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (42ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+2023-11-21 23:14:24,760 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (89ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-11-21 23:14:24,775 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+2023-11-21 23:14:24,781 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-11-21 23:14:24,846 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (11ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-11-21 23:14:24,904 [1] INFO Microsoft.EntityFrameworkCore.Migrations.?[?] - Applying migration '20231121174311_Initial'.
+2023-11-21 23:14:25,321 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (196ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Users] (
+    [UserEmail] nvarchar(450) NOT NULL,
+    [Name] nvarchar(max) NOT NULL,
+    [Password] varbinary(max) NOT NULL,
+    [PhoneNo] nvarchar(max) NOT NULL,
+    [Address] nvarchar(max) NOT NULL,
+    [Role] nvarchar(max) NOT NULL,
+    [Key] varbinary(max) NOT NULL,
+    CONSTRAINT [PK_Users] PRIMARY KEY ([UserEmail])
+);
+2023-11-21 23:14:25,366 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (26ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Hotels] (
+    [HotelId] int NOT NULL IDENTITY,
+    [UserEmail] nvarchar(450) NOT NULL,
+    [HotelName] nvarchar(max) NOT NULL,
+    [Address] nvarchar(max) NOT NULL,
+    [PhoneNo] nvarchar(max) NOT NULL,
+    [Description] nvarchar(max) NULL,
+    CONSTRAINT [PK_Hotels] PRIMARY KEY ([HotelId]),
+    CONSTRAINT [FK_Hotels_Users_UserEmail] FOREIGN KEY ([UserEmail]) REFERENCES [Users] ([UserEmail]) ON DELETE CASCADE
+);
+2023-11-21 23:14:25,401 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Bookings] (
+    [BookingId] int NOT NULL IDENTITY,
+    [UserEmail] nvarchar(450) NOT NULL,
+    [RoomId] int NOT NULL,
+    [BookingDate] nvarchar(max) NOT NULL,
+    [TotalRooms] int NOT NULL,
+    [Price] real NOT NULL,
+    CONSTRAINT [PK_Bookings] PRIMARY KEY ([BookingId]),
+    CONSTRAINT [FK_Bookings_Users_UserEmail] FOREIGN KEY ([UserEmail]) REFERENCES [Users] ([UserEmail]) ON DELETE CASCADE
+);
+2023-11-21 23:14:27,645 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (366ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Rooms] (
+    [RoomId] int NOT NULL,
+    [HotelId] int NOT NULL,
+    [Price] real NOT NULL,
+    [Description] nvarchar(max) NULL,
+    [UserEmail] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_Rooms] PRIMARY KEY ([RoomId]),
+    CONSTRAINT [FK_Rooms_Bookings_RoomId] FOREIGN KEY ([RoomId]) REFERENCES [Bookings] ([BookingId]),
+    CONSTRAINT [FK_Rooms_Hotels_HotelId] FOREIGN KEY ([HotelId]) REFERENCES [Hotels] ([HotelId]) ON DELETE CASCADE,
+    CONSTRAINT [FK_Rooms_Users_UserEmail] FOREIGN KEY ([UserEmail]) REFERENCES [Users] ([UserEmail])
+);
+2023-11-21 23:14:27,695 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [RoomAmenities] (
+    [RoomAmenityId] int NOT NULL IDENTITY,
+    [RoomId] int NOT NULL,
+    [Amenities] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_RoomAmenities] PRIMARY KEY ([RoomAmenityId]),
+    CONSTRAINT [FK_RoomAmenities_Rooms_RoomId] FOREIGN KEY ([RoomId]) REFERENCES [Rooms] ([RoomId]) ON DELETE CASCADE
+);
+2023-11-21 23:14:33,371 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (152ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_Bookings_RoomId] ON [Bookings] ([RoomId]);
+2023-11-21 23:14:33,383 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_Bookings_UserEmail] ON [Bookings] ([UserEmail]);
+2023-11-21 23:14:33,388 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_Hotels_UserEmail] ON [Hotels] ([UserEmail]);
+2023-11-21 23:14:33,393 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_RoomAmenities_RoomId] ON [RoomAmenities] ([RoomId]);
+2023-11-21 23:14:33,398 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_Rooms_HotelId] ON [Rooms] ([HotelId]);
+2023-11-21 23:14:33,404 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_Rooms_UserEmail] ON [Rooms] ([UserEmail]);
+2023-11-21 23:14:39,010 [1] ERROR Microsoft.EntityFrameworkCore.Database.Command.?[?] - Failed executing DbCommand (281ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE [Bookings] ADD CONSTRAINT [FK_Bookings_Rooms_RoomId] FOREIGN KEY ([RoomId]) REFERENCES [Rooms] ([RoomId]) ON DELETE CASCADE;
+2023-11-21 23:20:19,278 [1] WARN Microsoft.EntityFrameworkCore.Model.Validation.?[?] - The foreign key property 'Booking.UserEmail1' was created in shadow state because a conflicting property with the simple name 'UserEmail' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2023-11-21 23:20:19,400 [1] WARN Microsoft.EntityFrameworkCore.Model.Validation.?[?] - The foreign key property 'Hotel.UserEmail1' was created in shadow state because a conflicting property with the simple name 'UserEmail' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2023-11-21 23:20:19,989 [1] INFO Microsoft.EntityFrameworkCore.Infrastructure.?[?] - Entity Framework Core 6.0.24 initialized 'BookingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.24' with options: None
+2023-11-21 23:20:20,050 [1] WARN Microsoft.EntityFrameworkCore.Model.Validation.?[?] - The foreign key property 'Booking.UserEmail1' was created in shadow state because a conflicting property with the simple name 'UserEmail' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2023-11-21 23:20:20,053 [1] WARN Microsoft.EntityFrameworkCore.Model.Validation.?[?] - The foreign key property 'Hotel.UserEmail1' was created in shadow state because a conflicting property with the simple name 'UserEmail' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2023-11-21 23:21:34,682 [1] WARN Microsoft.EntityFrameworkCore.Model.Validation.?[?] - The foreign key property 'Booking.UserEmail1' was created in shadow state because a conflicting property with the simple name 'UserEmail' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2023-11-21 23:21:34,784 [1] WARN Microsoft.EntityFrameworkCore.Model.Validation.?[?] - The foreign key property 'Hotel.UserEmail1' was created in shadow state because a conflicting property with the simple name 'UserEmail' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2023-11-21 23:21:35,246 [1] INFO Microsoft.EntityFrameworkCore.Infrastructure.?[?] - Entity Framework Core 6.0.24 initialized 'BookingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.24' with options: None
+2023-11-21 23:21:37,588 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (53ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+2023-11-21 23:21:38,224 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (544ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-11-21 23:21:38,233 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+2023-11-21 23:21:38,235 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-11-21 23:21:38,358 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (79ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-11-21 23:21:38,429 [1] INFO Microsoft.EntityFrameworkCore.Migrations.?[?] - Applying migration '20231121175020_Initial'.
+2023-11-21 23:21:39,577 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (804ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Users] (
+    [UserEmail] nvarchar(450) NOT NULL,
+    [Name] nvarchar(max) NOT NULL,
+    [Password] varbinary(max) NOT NULL,
+    [PhoneNo] nvarchar(max) NOT NULL,
+    [Address] nvarchar(max) NOT NULL,
+    [Role] nvarchar(max) NOT NULL,
+    [Key] varbinary(max) NOT NULL,
+    CONSTRAINT [PK_Users] PRIMARY KEY ([UserEmail])
+);
+2023-11-21 23:21:39,610 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (28ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Hotels] (
+    [HotelId] int NOT NULL IDENTITY,
+    [UserEmail] nvarchar(max) NOT NULL,
+    [UserEmail1] nvarchar(450) NOT NULL,
+    [HotelName] nvarchar(max) NOT NULL,
+    [Address] nvarchar(max) NOT NULL,
+    [PhoneNo] nvarchar(max) NOT NULL,
+    [Description] nvarchar(max) NULL,
+    CONSTRAINT [PK_Hotels] PRIMARY KEY ([HotelId]),
+    CONSTRAINT [FK_Hotels_Users_UserEmail1] FOREIGN KEY ([UserEmail1]) REFERENCES [Users] ([UserEmail]) ON DELETE CASCADE
+);
+2023-11-21 23:21:39,644 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (29ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Bookings] (
+    [BookingId] int NOT NULL IDENTITY,
+    [UserEmail] nvarchar(max) NOT NULL,
+    [UserEmail1] nvarchar(450) NOT NULL,
+    [RoomId] int NOT NULL,
+    [BookingDate] nvarchar(max) NOT NULL,
+    [TotalRooms] int NOT NULL,
+    [Price] real NOT NULL,
+    CONSTRAINT [PK_Bookings] PRIMARY KEY ([BookingId]),
+    CONSTRAINT [FK_Bookings_Users_UserEmail1] FOREIGN KEY ([UserEmail1]) REFERENCES [Users] ([UserEmail]) ON DELETE CASCADE
+);
+2023-11-21 23:21:39,714 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (45ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Rooms] (
+    [RoomId] int NOT NULL,
+    [HotelId] int NOT NULL,
+    [Price] real NOT NULL,
+    [Description] nvarchar(max) NULL,
+    [UserEmail] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_Rooms] PRIMARY KEY ([RoomId]),
+    CONSTRAINT [FK_Rooms_Bookings_RoomId] FOREIGN KEY ([RoomId]) REFERENCES [Bookings] ([BookingId]),
+    CONSTRAINT [FK_Rooms_Hotels_HotelId] FOREIGN KEY ([HotelId]) REFERENCES [Hotels] ([HotelId]) ON DELETE CASCADE,
+    CONSTRAINT [FK_Rooms_Users_UserEmail] FOREIGN KEY ([UserEmail]) REFERENCES [Users] ([UserEmail])
+);
+2023-11-21 23:21:39,728 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [RoomAmenities] (
+    [RoomAmenityId] int NOT NULL IDENTITY,
+    [RoomId] int NOT NULL,
+    [Amenities] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_RoomAmenities] PRIMARY KEY ([RoomAmenityId]),
+    CONSTRAINT [FK_RoomAmenities_Rooms_RoomId] FOREIGN KEY ([RoomId]) REFERENCES [Rooms] ([RoomId]) ON DELETE CASCADE
+);
+2023-11-21 23:21:42,007 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (259ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_Bookings_RoomId] ON [Bookings] ([RoomId]);
+2023-11-21 23:21:42,088 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (74ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_Bookings_UserEmail1] ON [Bookings] ([UserEmail1]);
+2023-11-21 23:21:42,093 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_Hotels_UserEmail1] ON [Hotels] ([UserEmail1]);
+2023-11-21 23:21:42,097 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_RoomAmenities_RoomId] ON [RoomAmenities] ([RoomId]);
+2023-11-21 23:21:42,099 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_Rooms_HotelId] ON [Rooms] ([HotelId]);
+2023-11-21 23:21:42,102 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_Rooms_UserEmail] ON [Rooms] ([UserEmail]);
+2023-11-21 23:21:44,122 [1] ERROR Microsoft.EntityFrameworkCore.Database.Command.?[?] - Failed executing DbCommand (470ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE [Bookings] ADD CONSTRAINT [FK_Bookings_Rooms_RoomId] FOREIGN KEY ([RoomId]) REFERENCES [Rooms] ([RoomId]) ON DELETE CASCADE;
+2023-11-21 23:37:13,240 [1] WARN Microsoft.EntityFrameworkCore.Model.Validation.?[?] - The foreign key property 'Booking.UserEmail1' was created in shadow state because a conflicting property with the simple name 'UserEmail' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2023-11-21 23:37:13,728 [1] INFO Microsoft.EntityFrameworkCore.Infrastructure.?[?] - Entity Framework Core 6.0.24 initialized 'BookingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.24' with options: None
+2023-11-21 23:37:13,792 [1] WARN Microsoft.EntityFrameworkCore.Model.Validation.?[?] - The foreign key property 'Booking.UserEmail1' was created in shadow state because a conflicting property with the simple name 'UserEmail' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2023-11-21 23:38:00,864 [1] WARN Microsoft.EntityFrameworkCore.Model.Validation.?[?] - The foreign key property 'Booking.UserEmail1' was created in shadow state because a conflicting property with the simple name 'UserEmail' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2023-11-21 23:38:01,433 [1] INFO Microsoft.EntityFrameworkCore.Infrastructure.?[?] - Entity Framework Core 6.0.24 initialized 'BookingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.24' with options: None
+2023-11-21 23:38:04,030 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (51ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+2023-11-21 23:38:04,273 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (207ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-11-21 23:38:04,477 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (65ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+2023-11-21 23:38:04,511 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-11-21 23:38:04,636 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (50ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-11-21 23:38:04,681 [1] INFO Microsoft.EntityFrameworkCore.Migrations.?[?] - Applying migration '20231121180714_Initial'.
+2023-11-21 23:38:05,297 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (343ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Users] (
+    [UserEmail] nvarchar(450) NOT NULL,
+    [Name] nvarchar(max) NOT NULL,
+    [Password] varbinary(max) NOT NULL,
+    [PhoneNo] nvarchar(max) NOT NULL,
+    [Address] nvarchar(max) NOT NULL,
+    [Role] nvarchar(max) NOT NULL,
+    [Key] varbinary(max) NOT NULL,
+    CONSTRAINT [PK_Users] PRIMARY KEY ([UserEmail])
+);
+2023-11-21 23:38:05,331 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (22ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Hotels] (
+    [HotelId] int NOT NULL IDENTITY,
+    [UserEmail] nvarchar(450) NOT NULL,
+    [HotelName] nvarchar(max) NOT NULL,
+    [Address] nvarchar(max) NOT NULL,
+    [PhoneNo] nvarchar(max) NOT NULL,
+    [Description] nvarchar(max) NULL,
+    CONSTRAINT [PK_Hotels] PRIMARY KEY ([HotelId]),
+    CONSTRAINT [FK_Hotels_Users_UserEmail] FOREIGN KEY ([UserEmail]) REFERENCES [Users] ([UserEmail]) ON DELETE CASCADE
+);
+2023-11-21 23:38:05,358 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (25ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Rooms] (
+    [RoomId] int NOT NULL IDENTITY,
+    [HotelId] int NOT NULL,
+    [Price] real NOT NULL,
+    [Description] nvarchar(max) NULL,
+    [UserEmail] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_Rooms] PRIMARY KEY ([RoomId]),
+    CONSTRAINT [FK_Rooms_Hotels_HotelId] FOREIGN KEY ([HotelId]) REFERENCES [Hotels] ([HotelId]) ON DELETE CASCADE,
+    CONSTRAINT [FK_Rooms_Users_UserEmail] FOREIGN KEY ([UserEmail]) REFERENCES [Users] ([UserEmail])
+);
+2023-11-21 23:38:05,921 [1] ERROR Microsoft.EntityFrameworkCore.Database.Command.?[?] - Failed executing DbCommand (265ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Bookings] (
+    [BookingId] int NOT NULL IDENTITY,
+    [UserEmail] nvarchar(max) NOT NULL,
+    [UserEmail1] nvarchar(450) NOT NULL,
+    [RoomId] int NOT NULL,
+    [BookingDate] nvarchar(max) NOT NULL,
+    [TotalRooms] int NOT NULL,
+    [Price] real NOT NULL,
+    CONSTRAINT [PK_Bookings] PRIMARY KEY ([BookingId]),
+    CONSTRAINT [FK_Bookings_Rooms_RoomId] FOREIGN KEY ([RoomId]) REFERENCES [Rooms] ([RoomId]) ON DELETE CASCADE,
+    CONSTRAINT [FK_Bookings_Users_UserEmail1] FOREIGN KEY ([UserEmail1]) REFERENCES [Users] ([UserEmail]) ON DELETE CASCADE
+);
+2023-11-21 23:41:54,467 [1] INFO Microsoft.EntityFrameworkCore.Infrastructure.?[?] - Entity Framework Core 6.0.24 initialized 'BookingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.24' with options: None
+2023-11-21 23:42:43,037 [1] INFO Microsoft.EntityFrameworkCore.Infrastructure.?[?] - Entity Framework Core 6.0.24 initialized 'BookingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.24' with options: None
+2023-11-21 23:42:45,170 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (163ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+2023-11-21 23:42:45,572 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (366ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-11-21 23:42:45,580 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+2023-11-21 23:42:45,582 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-11-21 23:42:45,659 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (37ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-11-21 23:42:45,714 [1] INFO Microsoft.EntityFrameworkCore.Migrations.?[?] - Applying migration '20231121181155_Initial'.
+2023-11-21 23:42:46,184 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (266ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Users] (
+    [UserEmail] nvarchar(450) NOT NULL,
+    [Name] nvarchar(max) NOT NULL,
+    [Password] varbinary(max) NOT NULL,
+    [PhoneNo] nvarchar(max) NOT NULL,
+    [Address] nvarchar(max) NOT NULL,
+    [Role] nvarchar(max) NOT NULL,
+    [Key] varbinary(max) NOT NULL,
+    CONSTRAINT [PK_Users] PRIMARY KEY ([UserEmail])
+);
+2023-11-21 23:42:46,221 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (33ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Hotels] (
+    [HotelId] int NOT NULL IDENTITY,
+    [UserEmail] nvarchar(450) NOT NULL,
+    [HotelName] nvarchar(max) NOT NULL,
+    [Address] nvarchar(max) NOT NULL,
+    [PhoneNo] nvarchar(max) NOT NULL,
+    [Description] nvarchar(max) NULL,
+    CONSTRAINT [PK_Hotels] PRIMARY KEY ([HotelId]),
+    CONSTRAINT [FK_Hotels_Users_UserEmail] FOREIGN KEY ([UserEmail]) REFERENCES [Users] ([UserEmail]) ON DELETE CASCADE
+);
+2023-11-21 23:42:46,266 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (42ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Rooms] (
+    [RoomId] int NOT NULL IDENTITY,
+    [HotelId] int NOT NULL,
+    [Price] real NOT NULL,
+    [Description] nvarchar(max) NULL,
+    [UserEmail] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_Rooms] PRIMARY KEY ([RoomId]),
+    CONSTRAINT [FK_Rooms_Hotels_HotelId] FOREIGN KEY ([HotelId]) REFERENCES [Hotels] ([HotelId]) ON DELETE CASCADE,
+    CONSTRAINT [FK_Rooms_Users_UserEmail] FOREIGN KEY ([UserEmail]) REFERENCES [Users] ([UserEmail])
+);
+2023-11-21 23:42:47,599 [1] ERROR Microsoft.EntityFrameworkCore.Database.Command.?[?] - Failed executing DbCommand (189ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Bookings] (
+    [BookingId] int NOT NULL IDENTITY,
+    [UserEmail] nvarchar(450) NOT NULL,
+    [RoomId] int NOT NULL,
+    [BookingDate] nvarchar(max) NOT NULL,
+    [TotalRooms] int NOT NULL,
+    [Price] real NOT NULL,
+    CONSTRAINT [PK_Bookings] PRIMARY KEY ([BookingId]),
+    CONSTRAINT [FK_Bookings_Rooms_RoomId] FOREIGN KEY ([RoomId]) REFERENCES [Rooms] ([RoomId]) ON DELETE CASCADE,
+    CONSTRAINT [FK_Bookings_Users_UserEmail] FOREIGN KEY ([UserEmail]) REFERENCES [Users] ([UserEmail]) ON DELETE CASCADE
+);
+2023-11-21 23:46:18,639 [1] INFO Microsoft.EntityFrameworkCore.Infrastructure.?[?] - Entity Framework Core 6.0.24 initialized 'BookingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.24' with options: None
+2023-11-21 23:47:09,995 [1] INFO Microsoft.EntityFrameworkCore.Infrastructure.?[?] - Entity Framework Core 6.0.24 initialized 'BookingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.24' with options: None
+2023-11-21 23:47:12,397 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (142ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+2023-11-21 23:47:12,618 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (178ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-11-21 23:47:12,629 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+2023-11-21 23:47:12,635 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-11-21 23:47:12,706 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (29ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-11-21 23:47:12,753 [1] INFO Microsoft.EntityFrameworkCore.Migrations.?[?] - Applying migration '20231121181619_Initial'.
+2023-11-21 23:47:13,288 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (307ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Users] (
+    [UserEmail] nvarchar(450) NOT NULL,
+    [Name] nvarchar(max) NOT NULL,
+    [Password] varbinary(max) NOT NULL,
+    [PhoneNo] nvarchar(max) NOT NULL,
+    [Address] nvarchar(max) NOT NULL,
+    [Role] nvarchar(max) NOT NULL,
+    [Key] varbinary(max) NOT NULL,
+    CONSTRAINT [PK_Users] PRIMARY KEY ([UserEmail])
+);
+2023-11-21 23:47:13,318 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (28ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Hotels] (
+    [HotelId] int NOT NULL IDENTITY,
+    [UserEmail] nvarchar(450) NOT NULL,
+    [HotelName] nvarchar(max) NOT NULL,
+    [Address] nvarchar(max) NOT NULL,
+    [PhoneNo] nvarchar(max) NOT NULL,
+    [Description] nvarchar(max) NULL,
+    CONSTRAINT [PK_Hotels] PRIMARY KEY ([HotelId]),
+    CONSTRAINT [FK_Hotels_Users_UserEmail] FOREIGN KEY ([UserEmail]) REFERENCES [Users] ([UserEmail]) ON DELETE CASCADE
+);
+2023-11-21 23:47:13,345 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (24ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Rooms] (
+    [RoomId] int NOT NULL IDENTITY,
+    [HotelId] int NOT NULL,
+    [Price] real NOT NULL,
+    [Description] nvarchar(max) NULL,
+    [UserEmail] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_Rooms] PRIMARY KEY ([RoomId]),
+    CONSTRAINT [FK_Rooms_Hotels_HotelId] FOREIGN KEY ([HotelId]) REFERENCES [Hotels] ([HotelId]) ON DELETE CASCADE,
+    CONSTRAINT [FK_Rooms_Users_UserEmail] FOREIGN KEY ([UserEmail]) REFERENCES [Users] ([UserEmail])
+);
+2023-11-21 23:47:14,150 [1] ERROR Microsoft.EntityFrameworkCore.Database.Command.?[?] - Failed executing DbCommand (245ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Bookings] (
+    [BookingId] int NOT NULL IDENTITY,
+    [UserEmail] nvarchar(450) NOT NULL,
+    [RoomId] int NOT NULL,
+    [BookingDate] nvarchar(max) NOT NULL,
+    [TotalRooms] int NOT NULL,
+    [Price] real NOT NULL,
+    CONSTRAINT [PK_Bookings] PRIMARY KEY ([BookingId]),
+    CONSTRAINT [FK_Bookings_Rooms_RoomId] FOREIGN KEY ([RoomId]) REFERENCES [Rooms] ([RoomId]) ON DELETE CASCADE,
+    CONSTRAINT [FK_Bookings_Users_UserEmail] FOREIGN KEY ([UserEmail]) REFERENCES [Users] ([UserEmail]) ON DELETE CASCADE
+);
+2023-11-21 23:48:57,445 [1] INFO Microsoft.EntityFrameworkCore.Infrastructure.?[?] - Entity Framework Core 6.0.24 initialized 'BookingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.24' with options: None
+2023-11-21 23:48:59,645 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (41ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+2023-11-21 23:48:59,737 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (56ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-11-21 23:48:59,745 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+2023-11-21 23:48:59,747 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-11-21 23:48:59,812 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-11-21 23:48:59,871 [1] INFO Microsoft.EntityFrameworkCore.Migrations.?[?] - Applying migration '20231121181619_Initial'.
+2023-11-21 23:49:00,390 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (256ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Users] (
+    [UserEmail] nvarchar(450) NOT NULL,
+    [Name] nvarchar(max) NOT NULL,
+    [Password] varbinary(max) NOT NULL,
+    [PhoneNo] nvarchar(max) NOT NULL,
+    [Address] nvarchar(max) NOT NULL,
+    [Role] nvarchar(max) NOT NULL,
+    [Key] varbinary(max) NOT NULL,
+    CONSTRAINT [PK_Users] PRIMARY KEY ([UserEmail])
+);
+2023-11-21 23:49:00,419 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (25ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Hotels] (
+    [HotelId] int NOT NULL IDENTITY,
+    [UserEmail] nvarchar(450) NOT NULL,
+    [HotelName] nvarchar(max) NOT NULL,
+    [Address] nvarchar(max) NOT NULL,
+    [PhoneNo] nvarchar(max) NOT NULL,
+    [Description] nvarchar(max) NULL,
+    CONSTRAINT [PK_Hotels] PRIMARY KEY ([HotelId]),
+    CONSTRAINT [FK_Hotels_Users_UserEmail] FOREIGN KEY ([UserEmail]) REFERENCES [Users] ([UserEmail]) ON DELETE CASCADE
+);
+2023-11-21 23:49:00,463 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (36ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Rooms] (
+    [RoomId] int NOT NULL IDENTITY,
+    [HotelId] int NOT NULL,
+    [Price] real NOT NULL,
+    [Description] nvarchar(max) NULL,
+    [UserEmail] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_Rooms] PRIMARY KEY ([RoomId]),
+    CONSTRAINT [FK_Rooms_Hotels_HotelId] FOREIGN KEY ([HotelId]) REFERENCES [Hotels] ([HotelId]) ON DELETE CASCADE,
+    CONSTRAINT [FK_Rooms_Users_UserEmail] FOREIGN KEY ([UserEmail]) REFERENCES [Users] ([UserEmail])
+);
+2023-11-21 23:49:00,492 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (25ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Bookings] (
+    [BookingId] int NOT NULL IDENTITY,
+    [UserEmail] nvarchar(450) NOT NULL,
+    [RoomId] int NOT NULL,
+    [BookingDate] nvarchar(max) NOT NULL,
+    [TotalRooms] int NOT NULL,
+    [Price] real NOT NULL,
+    CONSTRAINT [PK_Bookings] PRIMARY KEY ([BookingId]),
+    CONSTRAINT [FK_Bookings_Rooms_RoomId] FOREIGN KEY ([RoomId]) REFERENCES [Rooms] ([RoomId]) ON DELETE CASCADE
+);
+2023-11-21 23:49:02,431 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (23ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [RoomAmenities] (
+    [RoomAmenityId] int NOT NULL IDENTITY,
+    [RoomId] int NOT NULL,
+    [Amenities] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_RoomAmenities] PRIMARY KEY ([RoomAmenityId]),
+    CONSTRAINT [FK_RoomAmenities_Rooms_RoomId] FOREIGN KEY ([RoomId]) REFERENCES [Rooms] ([RoomId]) ON DELETE CASCADE
+);
+2023-11-21 23:49:02,465 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (28ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_Bookings_RoomId] ON [Bookings] ([RoomId]);
+2023-11-21 23:49:02,492 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (18ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_Bookings_UserEmail] ON [Bookings] ([UserEmail]);
+2023-11-21 23:49:02,504 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_Hotels_UserEmail] ON [Hotels] ([UserEmail]);
+2023-11-21 23:49:02,509 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_RoomAmenities_RoomId] ON [RoomAmenities] ([RoomId]);
+2023-11-21 23:49:02,524 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_Rooms_HotelId] ON [Rooms] ([HotelId]);
+2023-11-21 23:49:02,529 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_Rooms_UserEmail] ON [Rooms] ([UserEmail]);
+2023-11-21 23:49:04,095 [1] INFO Microsoft.EntityFrameworkCore.Database.Command.?[?] - Executed DbCommand (120ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20231121181619_Initial', N'6.0.24');
+2023-11-21 23:49:58,628 [1] INFO Microsoft.Hosting.Lifetime.?[?] - Now listening on: https://localhost:7038
+2023-11-21 23:49:59,362 [1] INFO Microsoft.Hosting.Lifetime.?[?] - Now listening on: http://localhost:5169
+2023-11-21 23:49:59,754 [1] INFO Microsoft.Hosting.Lifetime.OnApplicationStarted[0] - Application started. Press Ctrl+C to shut down.
+2023-11-21 23:50:00,670 [1] INFO Microsoft.Hosting.Lifetime.OnApplicationStarted[0] - Hosting environment: Development
+2023-11-21 23:50:01,458 [1] INFO Microsoft.Hosting.Lifetime.OnApplicationStarted[0] - Content root path: C:\Desktop\stream training\Day15\HotelSolution\HotelApplication\

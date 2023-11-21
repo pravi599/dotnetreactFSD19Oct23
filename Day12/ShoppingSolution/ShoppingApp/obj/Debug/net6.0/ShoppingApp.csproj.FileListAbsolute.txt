@@ -498,3 +498,11 @@ C:\Desktop\stream training\Day12\ShoppingSolution\ShoppingApp\obj\Debug\net6.0\r
 C:\Desktop\stream training\Day12\ShoppingSolution\ShoppingApp\obj\Debug\net6.0\ShoppingApp.pdb
 C:\Desktop\stream training\Day12\ShoppingSolution\ShoppingApp\obj\Debug\net6.0\ShoppingApp.genruntimeconfig.cache
 C:\Desktop\stream training\Day12\ShoppingSolution\ShoppingApp\obj\Debug\net6.0\ref\ShoppingApp.dll
+C:\Desktop\stream training\Day12\ShoppingSolution\ShoppingApp\bin\Debug\net6.0\log4net.dll
+C:\Desktop\stream training\Day12\ShoppingSolution\ShoppingApp\bin\Debug\net6.0\Microsoft.Extensions.Logging.Log4Net.AspNetCore.dll
+C:\Desktop\stream training\Day12\ShoppingSolution\ShoppingApp\bin\Debug\net6.0\log4net.config
+C:\Desktop\stream training\Day12\ShoppingSolution\ShoppingApp\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Desktop\stream training\Day12\ShoppingSolution\ShoppingApp\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Desktop\stream training\Day12\ShoppingSolution\ShoppingApp\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Desktop\stream training\Day12\ShoppingSolution\ShoppingApp\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Desktop\stream training\Day12\ShoppingSolution\ShoppingApp\obj\Debug\net6.0\ShoppingApp.MvcApplicationPartsAssemblyInfo.cs
