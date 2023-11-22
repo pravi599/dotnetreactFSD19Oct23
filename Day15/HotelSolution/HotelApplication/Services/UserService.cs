@@ -56,7 +56,8 @@ namespace HotelApplication.Services
                 PhoneNo = userRegisterDTO.PhoneNo,
                 Address = userRegisterDTO.Address,
                 Key = hmac.Key,
-                Role = userRegisterDTO.Role
+                Role = userRegisterDTO.Role,
+                Name = userRegisterDTO.Name
             };
             var result = _repository.Add(user);
             if (result != null)
