@@ -1,0 +1,53 @@
+
+.registerForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.fieldContainer {
+    margin-bottom: 15px;
+}
+
+.fieldLabel {
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.passwordInput {
+    width: 100%;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+}
+
+.button {
+    margin: 5px;
+}
+.registerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.registerHeader {
+    text-align: center;
+    color:blue;
+    margin-bottom: 20px;
+}
+
+.registerBox {
+    width: 400px;
+    padding: 20px;
+    border: 1px solid #3498db;
+    border-radius: 8px;
+    text-align: center;
+}
+
+
+
+
+

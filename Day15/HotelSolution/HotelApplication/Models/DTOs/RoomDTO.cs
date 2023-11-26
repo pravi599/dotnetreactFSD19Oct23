@@ -10,6 +10,8 @@ namespace HotelApplication.Models.DTOs
         [Required(ErrorMessage = "Hotel ID cannot be empty")]
         public int HotelId { get; set; }
 
+        public string UserEmail { get; set; }
+
 
         [Required(ErrorMessage = "Price cannot be empty")]
         public float Price { get; set; }

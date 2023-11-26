@@ -32,6 +32,7 @@ namespace HotelApplication.Services
                 Price = roomDTO.Price,
                 HotelId = roomDTO.HotelId,
                 Description = roomDTO.Description,
+                UserEmail = roomDTO.UserEmail
             };
 
             //Add the room to the repository
